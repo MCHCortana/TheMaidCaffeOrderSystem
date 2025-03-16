@@ -1,0 +1,47 @@
+package k2w.thePub.mapper;
+
+import javax.annotation.processing.Generated;
+import k2w.thePub.dto.OrderDTO;
+import k2w.thePub.entity.OrderEntity;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2025-03-16T20:27:54+0100",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.12.1.jar, environment: Java 17.0.9 (JetBrains s.r.o.)"
+)
+@Component
+public class OrderMapperImpl implements OrderMapper {
+
+    @Override
+    public OrderEntity toEntity(OrderDTO source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        OrderEntity orderEntity = new OrderEntity();
+
+        orderEntity.setId( source.getId() );
+        orderEntity.setProductName( source.getProductName() );
+        orderEntity.setAmount( source.getAmount() );
+        orderEntity.setPrice( source.getPrice() );
+
+        return orderEntity;
+    }
+
+    @Override
+    public OrderDTO toDTO(OrderEntity source) {
+        if ( source == null ) {
+            return null;
+        }
+
+        OrderDTO orderDTO = new OrderDTO();
+
+        orderDTO.setId( source.getId() );
+        orderDTO.setProductName( source.getProductName() );
+        orderDTO.setAmount( source.getAmount() );
+        orderDTO.setPrice( source.getPrice() );
+
+        return orderDTO;
+    }
+}
